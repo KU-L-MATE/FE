@@ -1,0 +1,45 @@
+.login-container {
+    /* width: calc(100vh * (390 / 844)); */
+    width: calc(100vh * (460 / 844));
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    /* background-color: gray; */
+    margin: 0 auto;
+    margin-top: -60px;  /* 이렇게 강제로 해야 스크롤도 안되고 위쪽 여백도 안남는데...뭐가문제지 */
+  }
+  
+  .loginText {
+    width: 70%;
+    height: 10%;
+    padding-top:26%;
+    margin-bottom: 5%;
+    color: var(--darker);
+    font-size: 52px;
+    font-weight: 500;
+    margin: 0 auto;
+  }
+  
+  .loginSubText {
+    width: 50%;
+    height: 5%;
+    margin-bottom: 10%;
+    color: rgba(154, 154, 154, 1);
+  }  
+  .loginLogo {
+    /* height: 100%; */
+    margin-top:18%;
+  }
+.loginLogo:hover{
+    cursor: pointer;
+}
+  
+  .BrandLogo {
+    width: 30%;
+    height: 27%;
+    padding-top: 160px;
+}
+  
