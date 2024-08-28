@@ -1,0 +1,22 @@
+.bottom-bar {
+    bottom: -60%;
+    left: 0;
+    width: auto;
+    width:calc(100vh*390/844);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: white;
+    padding: 10px 0;
+    border-radius: 15px 15px 0px 0px;
+    box-shadow: 0px -0.5px 4px #00000040;
+    margin: 0 auto;
+  }
+  
+  .bottomBarIcon {
+    width: 24px;
+    height: 24px;
+  }
+  .bottomBarIcon:hover{
+    cursor: pointer;
+  }

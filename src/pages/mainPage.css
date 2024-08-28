@@ -1,5 +1,300 @@
-/* .logo{
-    background-color: red;
-    position: relative;
+
+.mainPage-container {
+    /* width: calc(100vh * (390 / 844)); */
+    /* width: calc(100vh * (460 / 844)); */
+    width:auto;
+    height: 100vh*90/100;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    box-sizing: border-box;
+    /* background-color: gray; */
     margin: 0 auto;
-} */
+    margin-top: -117px;  /* 이렇게 강제로 해야 스크롤도 안되고 위쪽 여백도 안남는데...뭐가문제지 */
+    gap:0;
+  }
+  
+
+  .mainPageHeader {
+    height: auto;
+    width:auto;
+    display: flex;
+    flex-direction: column;
+    margin: 1em auto 1em auto;
+    padding-top:25px;
+  }
+
+  .search-form {
+    display: flex;
+    /* justify-content: center;
+    align-items: center; */
+    color: white;
+    width: auto;
+    margin: 0 auto;
+  }
+
+  .mainPagelogo {
+    width: calc(100vh*0.12);
+    /* margin-left:5%; */
+    margin: 0 auto;
+  }
+  .mainPagelogo:hover{
+    cursor: pointer;
+  }
+  .searchInput {
+    /* padding: 5px;
+    margin-right: 5px; */
+    padding: 0px 1em;
+    border: 2px solid var(--darker);
+    border-radius: 9px;
+    height: 2.5em;
+    width:13em;
+    margin-left:15%;
+    margin-top: 10%;
+    z-index: 1;
+  }
+  
+  .searchButton {
+    z-index:2;
+    height: 1em;
+    margin-top: 9%;
+    /* margin-right: 1%; */
+  }
+  .searchButton:hover{
+    cursor: pointer;
+  }
+  .user-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--mid);
+    padding: 0.9em 1.2em;
+    border-radius: 9px;
+    color: white;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  .user-info{
+    cursor: pointer;
+  }
+  .userDetails {
+    display: flex;
+    align-items: center;
+  }
+  
+  .profileImg {
+    width: 1.2em;
+    height: 1.2em;
+    margin-right: 10px;
+  }
+
+  .userText{
+    display: flex;
+    flex-direction: column;
+    
+  }
+  
+  .userName  {
+    font-size: 20px;
+    font-weight: 500;
+  }
+  
+  .userAddress{
+    font-size: 9px;
+    font-weight: 300;
+    margin-top: 0.2em;
+
+  }
+  
+  .deliveryStatus {
+    text-align: right;
+    margin-left: 4em;
+  }
+  
+  .deliveryInfo {
+    font-size: 10px;
+    font-weight: 700;
+  }
+  
+  .reviewPrompt{
+    font-size: 9px;
+    font-weight: 300;
+    margin-top: 1.2em;
+
+  }
+  .hungry-button {
+    background-color: var(--mid);
+    border-radius: 10px;
+    color: white;
+    /* justify-content: space-between; */
+    height: calc(100vh * (100/844));
+    display: flex;
+    flex-direction: column;
+    padding: 0.1em 0.6em;
+    align-items: center;
+    line-height: center;
+    justify-content: center;
+    margin: 0;
+  }
+  .hungry-button:hover{
+    cursor: pointer;
+  }
+  .hungryHeader{
+    display: flex;
+    flex-direction: row;
+
+  }
+  .hungryHeaderTitle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1em;
+    font-weight: 600;    
+  }
+  
+  .hungryHeaderSubTitle {
+    font-size: 0.5em;
+    font-weight: 600;
+    padding-left: 2.5em;
+    padding-top:0.5em;
+  }
+  
+  
+  .hungryDescription {
+    display: flex;
+    flex-direction: row;
+    font-size: 0.5em;
+    font-weight: 400;
+    margin-top:2em;
+
+  }
+  
+  .hungryDeliveryIcons {
+    display: flex;
+    margin-left:3em;
+  }
+  
+  .hungryDeliveryIcon1, .hungryDeliveryIcon2, .hungryDeliveryIcon3 {
+    width: 2em;
+    height: 2em;
+  }
+  
+  .bbs-board {
+    background-color: white;
+    border-radius: 10px;
+    height: calc(100vh * (200/844));
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width:auto;
+    padding: 0 0 1em 0;
+    margin: 0;
+    margin-top:2em;
+  }
+  
+  .categoryTabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+    width:auto;
+  }
+  
+  .categoryTab1, .categoryTab2 {
+    cursor: pointer;
+    width:120%;
+    text-align: center;
+    padding: 0.4em 0;
+  }
+  .categoryTab1 {
+    border-top-left-radius: 10px; 
+  }
+  .categoryTab2 {
+    border-top-right-radius: 10px; 
+  }
+
+  .categoryTab.Active {
+    background-color: var(--mid);
+    color: white;
+  }
+  
+  .subTabs {
+    display: flex;
+    justify-content: center;
+    gap:0.9em;
+  }
+  
+  .subTab {
+    border-radius: 0.2em;
+    font-size:0.5em;
+    height: 2em;
+    width: 4em;
+    cursor: pointer;
+    border: 1px solid var(--brighter);
+    color: var(--brighter);
+    align-items: center; 
+    justify-content: center; 
+    text-align: center; 
+    padding-top: 0.2em;
+
+  }
+  
+  .subTab.Active {
+    background-color:var(--mid);;
+    color: white;
+  }
+  
+  .posts {
+    display: flex;
+    flex-direction: column;
+    gap:0.4em;
+    padding: 0.5em 0.6em;
+    margin: 0 2em;
+    
+  }
+  .post {
+    display: flex;
+    align-items: center;
+    /* padding: 5px 0; */
+  }
+  .post:hover{
+    cursor: pointer;
+  }
+  .postIcon {
+    width: 0.5em;
+    height:0.5em;
+    margin-right: 10px;
+  }
+  
+  .postText {
+    font-size: 0.7em;
+    font-weight: 300;
+  }
+  
+  .free-board {
+    background-color: white;
+    border-radius: 10px;
+    height: calc(100vh * (190/844));
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width:auto;
+    margin: 2em 0;
+  }
+  .freeBoardHeader{
+    color: var(--mid);
+    padding: 0.4em 0 0 2em;
+  }
+  .freeBoardHeader:hover{
+    cursor: pointer;
+  }
+  .posts2 {
+    display: flex;
+    flex-direction: column;
+    gap:0.4em;
+    padding: 0.5em 1.4em;    
+
+  }
+
+  .postNumber {
+    margin-left: 0.7em;
+    font-size: 0.7em;
+    font-weight: 600;
+    color: var(--brighter);
+  }

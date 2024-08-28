@@ -13,19 +13,24 @@
   }
   
   .loginText {
-    width: 70%;
+    position: relative;
+    display: flexbox;
+    width: auto;
     height: 10%;
     padding-top:26%;
+    padding-left: 5%;
+    padding-right: 5%;
     margin-bottom: 5%;
     color: var(--darker);
     font-size: 52px;
     font-weight: 500;
     margin: 0 auto;
   }
-  
+
   .loginSubText {
-    width: 50%;
+    width: auto;
     height: 5%;
+    margin-top:5%;
     margin-bottom: 10%;
     color: rgba(154, 154, 154, 1);
   }  

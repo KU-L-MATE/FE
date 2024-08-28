@@ -24,7 +24,6 @@ const App = () => {
             path="/main" 
             element={
               <>
-                <Header />
                 <MainPage />
                 <BottomBar />
               </>
