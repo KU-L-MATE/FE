@@ -106,127 +106,115 @@ const MainPage = () => {
      return text.length > maxLength ? text.slice(0, maxLength) + '...' : text;
    };
   return (
-    <div className="mainPage-container">
-      <div className="mainPageHeader">
-        <div className="search-form">
-        <img className="mainPagelogo" src="/logo.svg" alt="Logo"  />
-          <form>
-            <input className="searchInput" 
-                   type="text" 
-                   placeholder="내용을 입력해주세요" 
-                   value={inputValue}
-                   onChange={handleChange}/>
-          </form>
-          <img className="searchButton" alt="search" src="/mainPageSearchBtn.svg"/>
-        </div>
-        <div className="user-info">
-          <div className="userDetails">
-            <img className="profileImg" src="/mainpageProfile.svg" alt="Profile"  />
-            <div className="userText">
-              <div className="userName">익명</div>
-              <div className="userAddress">레이크홀 507호</div>
-            </div>
-          </div>
-          <div className="deliveryStatus">
-            <div className="deliveryInfo">배달 현황: 배달중 1 외 1건</div>
-            <div className="reviewPrompt">기숙사 리뷰를 해주세요!</div>
-          </div>
-        </div>
+<div className="mainpage-container">
+  <div className="mainpage-header">
+    <div className="search-form">
+      <img className="mainpage-logo" src="/logo.svg" alt="Logo" />
+      <form>
+        <input className="search-input"
+               type="text"
+               placeholder="내용을 입력해주세요"
+               value={inputValue}
+               onChange={handleChange}/>
+      </form>
+      <img className="search-button" alt="search" src="/mainPageSearchBtn.svg"/>
     </div>
-    <div className="hungry-button">
-          <div className="hungryHeader">
-            <span className="hungryHeaderTitle">지금 배고프신가요?</span>
-            <span className="hungryHeaderSubTitle">배달메이트 찾으러 가기</span>
-          </div>
-          <div className="hungryDescription">
-            피자, 치킨, 떡볶이 등 메이트와 같이 배달시켜보세요!
-            <div className="hungryDeliveryIcons">
-              <img  className="hungryDeliveryIcon1" src="/delivery1.svg" alt="Delivery 1" />
-              <img className="hungryDeliveryIcon2" src="/delivery2.svg" alt="Delivery 2"  />
-              <img className="hungryDeliveryIcon3" src="/delivery3.svg" alt="Delivery 3"  />
-            </div>
-          </div>
+    <div className="user-info">
+      <div className="user-details">
+        <img className="profile-img" src="/mainpageProfile.svg" alt="Profile" />
+        <div className="user-text">
+          <div className="user-name">익명</div>
+          <div className="user-address">레이크홀 507호</div>
+        </div>
       </div>
-      <div className="bbs-board">
-        <div className="categoryTabs">
-        {categories.map((category, index) => (
-            <div
-              key={category}
-              // CSS에서 categoryTab1 왼쪽위, categoryTab2는 오른쪽위가 둥글어야함. 이에 React에서 변수명 분리함.
-              className={`categoryTab ${index === 0 ? 'categoryTab1' : index === 1 ? 'categoryTab2' : ''} ${selectedCategory === category ? 'Active' : ''}`}
-              onClick={() => setSelectedCategory(category)}
-            >
-        <img
-          src={
-            index === 0
-              ? selectedCategory === category
-                ? '/Selecteddormitory.svg'
-                : '/dormitory.svg'
-              : selectedCategory === category
-              ? '/Selecteduniv.svg'
-              : '/univ.svg'
-          }
-          alt={category}
-          className="categoryIcon"
-        />  
-              {category}
-            </div>
-          ))}
+      <div className="delivery-status">
+        <div className="delivery-info">배달 현황: 배달중 1 외 1건</div>
+        <div className="review-prompt">기숙사 리뷰를 해주세요!</div>
+      </div>
+    </div>
+  </div>
+  <div className="hungry-button">
+    <div className="hungry-header">
+      <span className="hungry-header-title">지금 배고프신가요?</span>
+      <span className="hungry-header-subtitle">배달메이트 찾으러 가기</span>
+    </div>
+    <div className="hungry-description">
+      피자, 치킨, 떡볶이 등 메이트와 같이 배달시켜보세요!
+      <div className="hungry-delivery-icons">
+        <img className="hungry-delivery-icon1" src="/delivery1.svg" alt="Delivery 1" />
+        <img className="hungry-delivery-icon2" src="/delivery2.svg" alt="Delivery 2" />
+        <img className="hungry-delivery-icon3" src="/delivery3.svg" alt="Delivery 3" />
+      </div>
+    </div>
+  </div>
+  <div className="bbs-board">
+    <div className="category-tabs">
+      {categories.map((category, index) => (
+        <div
+          key={category}
+          className={`category-tab ${index === 0 ? 'category-tab1' : index === 1 ? 'category-tab2' : ''} ${selectedCategory === category ? 'active' : ''}`}
+          onClick={() => setSelectedCategory(category)}
+        >
+          <img
+            src={
+              index === 0
+                ? selectedCategory === category
+                  ? '/selecteddormitory.svg'
+                  : '/dormitory.svg'
+                : selectedCategory === category
+                ? '/selecteduniv.svg'
+                : '/univ.svg'
+            }
+            alt={category}
+            className="category-icon"
+          />
+          {category}
         </div>
-        <div className="subTabs">
-          {tabs.map(tab => (
-            <div
-              key={tab}
-              className={`subTab ${selectedTab === tab ? 'Active' : ''}`}
-              onClick={() => setSelectedTab(tab)}
-            >
-              {tab}
-            </div>
-          ))}
+      ))}
+    </div>
+    <div className="sub-tabs">
+      {tabs.map(tab => (
+        <div
+          key={tab}
+          className={`sub-tab ${selectedTab === tab ? 'active' : ''}`}
+          onClick={() => setSelectedTab(tab)}
+        >
+          {tab}
         </div>
-        <div className="posts">
-        {posts.slice(0, visiblePosts1).map((post) => (
-            <div key={post.id} className="post">
-              <img
-                src={post.id <= 3 ? '/Hicon.svg' : '/Nicon.svg'}
-                alt="icon"
-                className="postIcon"
-              />
-              {/* <span className="postText">{post.text}</span> */}
-              <span className="postText">{truncateText(post.text)}</span>
-              </div>
-          ))}
+      ))}
+    </div>
+    <div className="posts">
+      {posts.slice(0, visiblePosts1).map((post) => (
+        <div key={post.id} className="post">
+          <img
+            src={post.id <= 3 ? '/hicon.svg' : '/nicon.svg'}
+            alt="icon"
+            className="post-icon"
+          />
+          <span className="post-text">{truncateText(post.text)}</span>
         </div>
-        {/* 서버연결시 게시글 보여주는건 아래코드로 ㄱㄱ 
-        <div className="posts">
-          {posts.map(post => (
-            <div key={post.id} className="post">
-              <img src={`/${post.type}.svg`} alt="icon" className="post-icon" />
-              <span className="post-text">{post.text}</span>
-            </div>
-          ))}
-        </div>
-        */}
-    </div> 
-    <div className="free-board">
-      <div className="freeBoardHeader">자유게시판 &gt; </div>
-      <div className="posts2">
+      ))}
+    </div>
+  </div>
+  <div className="free-board">
+    <div className="free-board-header">자유게시판 &gt; </div>
+    <div className="posts2">
       {posts2.slice(0, visiblePosts2).map((post) => (
-          <div key={post.id} className="post">
-            <div className="postLeft">
-              <img
-                src={post.id <= 3 ? '/Hicon.svg' : '/Nicon.svg'}
-                alt="icon"
-                className="postIcon"
-              />
-              <span className="postText">{truncateText(post.text)}</span>
-            </div>
-            <span className="postNumber">{post.number}</span>
+        <div key={post.id} className="post">
+          <div className="post-left">
+            <img
+              src={post.id <= 3 ? '/hicon.svg' : '/nicon.svg'}
+              alt="icon"
+              className="post-icon"
+            />
+            <span className="post-text">{truncateText(post.text)}</span>
           </div>
-        ))}
-      </div>
+          <span className="post-number">{post.number}</span>
+        </div>
+      ))}
     </div>
-   </div>
+  </div>
+</div>
   );
 };
 

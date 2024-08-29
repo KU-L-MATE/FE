@@ -33,28 +33,29 @@ const DormitoryPage = () => {
     };
   return (
     <div className="dormitory-container">
-    <div className="dormitoryText">기숙사 인증하기</div>
-    <div className="dormitorySubText">기숙자 합격증을<p />찍어주세요</div>
-        <div className="dormitoryFileBox">
-            <img 
-                alt="dormitoryPic"
-                 className="dormitoryPic" 
-                 onClick={handleImageClick} 
-                 src={imageSrc} 
-                 style={{
-                    objectFit: 'cover'        // 이미지를 유지하고 크기에 맞게 잘라냄
-                }}
+        <div className="dormitory-text">기숙사 인증하기</div>
+        <div className="dormitory-subtext">기숙자 합격증을<p />찍어주세요</div>
+        <div className="dormitory-filebox">
+            <img
+            alt="dormitory-pic"
+            className="dormitory-pic"
+            onClick={handleImageClick}
+            src={imageSrc}
+            style={{
+                objectFit: 'cover', // 이미지를 크기에 맞게 자름
+            }}
             />
-            <input 
-                id="fileInput" 
-                type="file" 
-                accept="image/*" 
-                style={{ display: 'none' }} 
-                onChange={handleFileChange} 
-            />  
-            </div>
-    <img src="/logo.svg" alt="Image 2" className="BrandLogo" />
-  </div>
+            <input
+            id="fileInput"
+            type="file"
+            accept="image/*"
+            style={{ display: 'none' }}
+            onChange={handleFileChange}
+            />
+        </div>
+        <img src="/logo.svg" alt="brand-logo" className="brand-logo" />
+    </div>
+
   );
 };
 

@@ -1,63 +1,60 @@
 .dormitory-container {
-    /* width: calc(100vh * (390 / 844)); */
-    width: calc(100vh * (460 / 844));
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    box-sizing: border-box;
-    /* background-color: gray; */
-    margin: 0 auto;
-    margin-top: -60px;  /* 이렇게 강제로 해야 스크롤도 안되고 위쪽 여백도 안남는데...뭐가문제지 */
-  }
-  
-  .dormitoryText {
-    width: auto;
-    margin-bottom: 10%;  
-    height: 10%;
-    padding-bottom: 5%;
-    padding-top: 23%;
-    color: var(--darkest);
-    font-size: 32px;
-    font-weight: 500;
-    margin: 0 auto;
-    text-align: center;
-  }
-  
-  .dormitorySubText {
-    width: 50%;
-    height: 5%;
-    color: #9A9A9A;
-    font-size: 16px;
-    font-weight: 400;
-    text-align: center;
-    line-height: 8px;
+  width: calc(100vh * (460 / 844));
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  margin: 0 auto;
+  margin-top: -60px;
+}
 
-    
-  }  
-.dormitoryFileBox{
-    /* width: calc(100vh*272); */
-    width: 272px;
-    height: 159px;
-  } 
-.dormitoryPic {
-    /* height: 100%; */
-    margin-top:26%;
-    width: 272px;
-    height: 159px;
-    cursor: pointer;
-  }
-.dormitoryPic:hover{
-    cursor: pointer;
+.dormitory-text {
+  width: auto;
+  margin-bottom: 10%;
+  height: 10%;
+  padding-bottom: 5%;
+  padding-top: 23%;
+  color: var(--darkest);
+  font-size: 32px;
+  font-weight: 500;
+  margin: 0 auto;
+  text-align: center;
 }
-.dormitoryFileInput{
-    width: 50%;
-    height: 159px;
+
+.dormitory-subtext {
+  width: 50%;
+  height: 5%;
+  color: #9a9a9a;
+  font-size: 16px;
+  font-weight: 400;
+  text-align: center;
+  line-height: 8px;
 }
-  .BrandLogo {
-    width: 30%;
-    height: 27%;
-    padding-top: 160px;
+
+.dormitory-filebox {
+  width: 272px;
+  height: 159px;
 }
-  
+
+.dormitory-pic {
+  margin-top: 26%;
+  width: 272px;
+  height: 159px;
+  cursor: pointer;
+}
+.dormitory-pic:hover {
+  cursor: pointer;
+}
+
+.dormitory-fileinput {
+  width: 50%;
+  height: 159px;
+}
+
+.brand-logo {
+  width: 30%;
+  height: 27%;
+  padding-top: 160px;
+}
