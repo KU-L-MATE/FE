@@ -18,7 +18,7 @@
     height: 10%;
     padding-bottom: 5%;
     padding-top: 23%;
-    color: var(--darker);
+    color: var(--darkest);
     font-size: 32px;
     font-weight: 500;
     margin: 0 auto;
@@ -28,7 +28,7 @@
   .dormitorySubText {
     width: 50%;
     height: 5%;
-    color: rgba(154, 154, 154, 1);
+    color: #9A9A9A;
     font-size: 16px;
     font-weight: 400;
     text-align: center;

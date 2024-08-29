@@ -71,13 +71,40 @@ const MainPage = () => {
       setVisiblePosts2(Math.max(1, maxVisiblePosts2)); 
 
     };
-
     updateVisiblePosts(); // 초기 로드 시 호출
 
-    window.addEventListener('resize', updateVisiblePosts); // 창 크기 변경 시 호출
 
+    window.addEventListener('resize', updateVisiblePosts); // 창 크기 변경 시 호출
     return () => window.removeEventListener('resize', updateVisiblePosts);
   }, []);
+
+   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+   // 창 크기 변경에 따라 windowWidth를 업데이트
+   useEffect(() => {
+     // 창 크기가 변경될 때 실행될 함수
+     const handleResize = () => setWindowWidth(window.innerWidth);
+     window.addEventListener('resize', handleResize);
+     return () => {
+       window.removeEventListener('resize', handleResize);
+     };
+   }, []);
+ 
+   // 텍스트를 창 크기에 따라 잘라내는 함수
+   const truncateText = (text) => {
+     let maxLength;
+     
+     // 창 크기에 따른 최대 글자 수 설정
+     if (windowWidth > 1200) {
+       maxLength = 50;  
+     } else if (windowWidth > 800) {
+       maxLength = 30;  
+     } else {
+       maxLength = 20;  
+     }
+ 
+     // 글자가 maxLength를 초과하면 '...'으로 자름
+     return text.length > maxLength ? text.slice(0, maxLength) + '...' : text;
+   };
   return (
     <div className="mainPage-container">
       <div className="mainPageHeader">
@@ -96,7 +123,7 @@ const MainPage = () => {
           <div className="userDetails">
             <img className="profileImg" src="/mainpageProfile.svg" alt="Profile"  />
             <div className="userText">
-              <div className="userName">황차빈</div>
+              <div className="userName">익명</div>
               <div className="userAddress">레이크홀 507호</div>
             </div>
           </div>
@@ -129,6 +156,19 @@ const MainPage = () => {
               className={`categoryTab ${index === 0 ? 'categoryTab1' : index === 1 ? 'categoryTab2' : ''} ${selectedCategory === category ? 'Active' : ''}`}
               onClick={() => setSelectedCategory(category)}
             >
+        <img
+          src={
+            index === 0
+              ? selectedCategory === category
+                ? '/Selecteddormitory.svg'
+                : '/dormitory.svg'
+              : selectedCategory === category
+              ? '/Selecteduniv.svg'
+              : '/univ.svg'
+          }
+          alt={category}
+          className="categoryIcon"
+        />  
               {category}
             </div>
           ))}
@@ -152,8 +192,9 @@ const MainPage = () => {
                 alt="icon"
                 className="postIcon"
               />
-              <span className="postText">{post.text}</span>
-            </div>
+              {/* <span className="postText">{post.text}</span> */}
+              <span className="postText">{truncateText(post.text)}</span>
+              </div>
           ))}
         </div>
         {/* 서버연결시 게시글 보여주는건 아래코드로 ㄱㄱ 
@@ -178,7 +219,7 @@ const MainPage = () => {
                 alt="icon"
                 className="postIcon"
               />
-              <span className="postText">{post.text}</span>
+              <span className="postText">{truncateText(post.text)}</span>
             </div>
             <span className="postNumber">{post.number}</span>
           </div>

@@ -1,9 +1,8 @@
 :root{
-  --darkest: #134611;
-  --darker: #3E8914;
+  --darkest: #3E8914;
+  --darker: #6AB443;
   --mid: #3DA35D;
-  --brighter:#96E072;
-  --brightest:#E8FCCF;
+  --brighter:#E8FCCF;
   /* font-family: "Pretendard-Medium", Helvetica; */
   --font-family-sans: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
 
